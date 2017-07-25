@@ -17,16 +17,16 @@ void Trigger_Paths_Analysis( const char *inputFile )
   chain.Add(inputFile);
 
   // Create object of class ExRootTreeReader
+
   ExRootTreeReader *treeReader = new ExRootTreeReader(&chain);
   Long64_t numberOfEntries = treeReader->GetEntries();
 
   // Get pointers to branches used in this analysis
-  TClonesArray *branchJet = treeReader->UseBranch("Jet");
-  TClonesArray *branchElectron = treeReader->UseBranch("Electron");
 
-  // Book histograms
-  TH1 *histJetPT = new TH1F("jet_pt", "jet P_{T}", 100, 0.0, 100.0);
-  TH1 *histMass = new TH1F("mass", "M_{inv}(e_{1}, e_{2})", 100, 40.0, 140.0);
+  TClonesArray *branchMuon = treeReader->UseBranch("Muon");
+  TClonesArray *branchMissingET = treeReader->UseBranch("MissingET");
+  TClonesArray *branchJet = treeReader->UseBranch("Jet");
+  
   
 
 
