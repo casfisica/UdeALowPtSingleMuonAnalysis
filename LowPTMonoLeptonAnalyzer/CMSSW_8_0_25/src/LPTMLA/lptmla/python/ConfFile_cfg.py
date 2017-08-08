@@ -5,6 +5,7 @@ import FWCore.ParameterSet.Config as cms
 # import Foo.Bar.lo_que_sea
 
 #Inicio el proceso, que en este caso se llama SingleMu
+#There must be exactly one cms.Process with the name process in a top level
 process = cms.Process("SingleMu")
 
 process.load("FWCore.MessageService.MessageLogger_cfi")
